@@ -57,3 +57,21 @@
     font-weight: 700;
     text-decoration: underline;
 }
+
+@media only screen and (max-height: 650px)  {
+    .game-layout .layout-container .subcontainer .game-container {
+        height: 80vh;
+    }
+}
+
+@media only screen and (max-width: 768px)  {
+    .game-layout .layout-container .subcontainer .game-container {
+        width: 90vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .game-layout .layout-container .subcontainer img {
+        display: none;
+    }
+}
