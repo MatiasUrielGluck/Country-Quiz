@@ -1,5 +1,5 @@
 import "./game-layout.css";
-import playingLogo from '../assets/playing_logo.svg'
+import playingLogo from "../assets/playing_logo.svg";
 
 export const GameLayout = ({ children }) => {
   return (
@@ -8,11 +8,9 @@ export const GameLayout = ({ children }) => {
         <div className="subcontainer">
           <h1>Country quiz</h1>
           <img src={playingLogo} alt="let's play logo" />
-          <div className="game-container"></div>
+          <div className="game-container">{children}</div>
         </div>
       </div>
-
-      {children}
       <footer>
         <p className="footer">
           created by <span className="footer-special">Matías Uriel Gluck</span>
