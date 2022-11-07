@@ -19,8 +19,8 @@ export const Option = ({ option, correctOption, number }) => {
   };
 
   return (
-    <div>
-      <span>{numberToLetter(number)}</span>
+    <div className="option">
+      <span className="letter">{numberToLetter(number)}</span>
       <span>{option.name.common}</span>
       {
         // If this option was clicked, show if its correct or no
