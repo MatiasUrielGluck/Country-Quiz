@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   finished: false,
   stage: 1,
-  max_stage: 10,
+  max_stage: 3,
   correctCounter: 0,
 };
 

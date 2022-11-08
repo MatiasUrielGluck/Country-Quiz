@@ -1,22 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { generateQuizType } from "../../../../helpers";
 import { GameOver, Quiz } from "../";
-import { finishGame } from "../../../../store/gameSlice";
 import { useCountries } from "../../../../hooks";
 
 export const GameController = () => {
   const { countries } = useCountries();
 
-  const { stage, max_stage, finished } = useSelector((state) => state.game);
-  const dispatch = useDispatch();
-
-  if (stage > max_stage) {
-    dispatch(finishGame());
-  }
+  const { stage, max_stage } = useSelector((state) => state.game);
 
   let quizType = generateQuizType();
 
-  if (finished) {
+  if (stage > max_stage) {
     return <GameOver />;
   }
 
