@@ -7,6 +7,7 @@
 }
 
 .capital-quiz .options-container .option {
+    position: relative;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -38,4 +39,32 @@
     background: #F9A826;
     color: white;
     border: 2px solid rgba(96, 102, 208, 0);
+}
+
+.capital-quiz .options-container .option .icon {
+    position: absolute;
+    right: 16px;
+    font-size: 24px;
+}
+
+.capital-quiz .next-btn {
+    float: right;
+    font-size: 18px;
+    margin-top: 12px;
+    background: #F9A826;
+    color: white;
+    padding: 15px 36px;
+    box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
+    border: none;
+    border-radius: 12px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.capital-quiz .next-btn.show {
+    opacity: 1;
+}
+
+.capital-quiz .next-btn:hover {
+    background: #df9622;
 }

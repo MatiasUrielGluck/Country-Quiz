@@ -41,6 +41,13 @@ export const Option = ({
       >
         <span className="letter">{numberToLetter(number)}</span>
         <span>{option.name.common}</span>
+        {
+          option === correctAnswer
+          ? <i className="icon fa-regular fa-circle-check"></i>
+          : optionPlayed === option
+          ? <i className="icon fa-regular fa-circle-xmark"></i>
+          : null
+        }
       </div>
     );
   }

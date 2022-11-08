@@ -19,7 +19,7 @@ export const GameController = () => {
   if (finished) {
     return <GameOver />;
   } else if (quizType === 1) {
-    return <CapitalQuiz countries={countries}/>;
+    return <CapitalQuiz countries={countries} />;
   } else {
     return <FlagQuiz countries={countries}/>;
   }

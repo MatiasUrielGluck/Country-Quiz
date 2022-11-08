@@ -31,6 +31,8 @@ export const CapitalQuiz = ({ countries }) => {
   }, [country]);
 
   const onNext = () => {
+    setOptionPlayed(null);
+    setCountry(getRandomCountry(countries));
     dispatch(nextStage());
   };
 
@@ -53,7 +55,7 @@ export const CapitalQuiz = ({ countries }) => {
             ))}
           </div>
 
-          <button onClick={onNext}>Next</button>
+          <button className={`next-btn ${optionPlayed ? "show" : null}`} onClick={onNext}>Next</button>
         </>
       ) : (
         <h2>Loading...</h2>
