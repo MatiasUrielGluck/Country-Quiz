@@ -7,7 +7,7 @@ export const GameLayout = ({ children }) => {
       <div className="layout-container">
         <div className="subcontainer">
           <h1>Country quiz</h1>
-          <img src={playingLogo} alt="let's play logo" />
+          <img className="game-image" src={playingLogo} alt="let's play logo" />
           <div className="game-container">{children}</div>
         </div>
       </div>
