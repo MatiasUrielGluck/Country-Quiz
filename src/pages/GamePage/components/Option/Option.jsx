@@ -1,4 +1,10 @@
-export const Option = ({ option, correctOption, number }) => {
+export const Option = ({
+  option,
+  number,
+  correctAnswer,
+  optionPlayed,
+  setOptionPlayed,
+}) => {
   const numberToLetter = () => {
     switch (number) {
       case 0:
@@ -18,14 +24,31 @@ export const Option = ({ option, correctOption, number }) => {
     }
   };
 
+  const onOptionPlayed = () => {
+    setOptionPlayed(option);
+  };
+
+  if (optionPlayed) {
+    return (
+      <div
+        className={`option ${
+          option === correctAnswer
+            ? "correct"
+            : optionPlayed === option
+            ? "incorrect"
+            : null
+        }`}
+      >
+        <span className="letter">{numberToLetter(number)}</span>
+        <span>{option.name.common}</span>
+      </div>
+    );
+  }
+
   return (
-    <div className="option">
+    <div className="option" onClick={onOptionPlayed}>
       <span className="letter">{numberToLetter(number)}</span>
       <span>{option.name.common}</span>
-      {
-        // If this option was clicked, show if its correct or no
-        // If it was not clicked but is correct and the user choose another option, show it's correct.
-      }
     </div>
   );
 };

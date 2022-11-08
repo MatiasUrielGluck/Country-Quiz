@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
   getOptions,
@@ -12,15 +14,21 @@ import "./capital-quiz.css";
 export const CapitalQuiz = ({ countries }) => {
   const dispatch = useDispatch();
 
-  const country = getRandomCountry(countries);
-  let options;
-  let shuffledOptions;
+  const [country, setCountry] = useState(null);
+  const [optionPlayed, setOptionPlayed] = useState(null);
+  const [shuffledOptions, setShuffledOptions] = useState(null);
 
-  if (country) {
-    options = getOptions(countries, country);
-    options.push(country);
-    shuffledOptions = shuffleArray(options);
-  }
+  useEffect(() => {
+    setCountry(getRandomCountry(countries));
+  }, []);
+
+  useEffect(() => {
+    if (country) {
+      let options = getOptions(countries, country);
+      options.push(country);
+      setShuffledOptions(shuffleArray(options));
+    }
+  }, [country]);
 
   const onNext = () => {
     dispatch(nextStage());
@@ -28,12 +36,21 @@ export const CapitalQuiz = ({ countries }) => {
 
   return (
     <div className="capital-quiz">
-      {country ? (
+      {country && shuffledOptions ? (
         <>
           <h2>{country.capital[0]} is the capital of</h2>
 
           <div className="options-container">
-            { shuffledOptions.map((option, index) => <Option option={option} correctOption={country} number={index} key={index} />) }
+            {shuffledOptions.map((option, index) => (
+              <Option
+                option={option}
+                number={index}
+                correctAnswer={country}
+                optionPlayed={optionPlayed}
+                setOptionPlayed={setOptionPlayed}
+                key={index}
+              />
+            ))}
           </div>
 
           <button onClick={onNext}>Next</button>
