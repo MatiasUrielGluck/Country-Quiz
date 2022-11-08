@@ -20,8 +20,15 @@ export const gameSlice = createSlice({
     finishGame: (state) => {
       state.finished = true;
     },
+    resetState: (state) => {
+      state.finished = initialState.finished;
+      state.stage = initialState.stage;
+      state.max_stage = initialState.max_stage;
+      state.correctCounter = initialState.correctCounter;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addCorrect, nextStage, finishGame } = gameSlice.actions;
+export const { addCorrect, nextStage, finishGame, resetState } =
+  gameSlice.actions;

@@ -1,0 +1,36 @@
+.game-over {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.game-over > h1 {
+    font-size: 48px;
+    color: #1D355D;
+}
+
+.game-over > p {
+    color: #1D355D;
+}
+
+.game-over .correct-counter {
+    font-size: 36px;
+    font-weight: bold;
+    color: #6FCF97;
+}
+
+.game-over .try-again-btn {
+    cursor: pointer;
+    font-size: 18px;
+    border: 2px solid #1D355D;
+    border-radius: 12px;
+    padding: 18px 60px;
+    background: white !important;
+    transition: all 0.3s ease;
+}
+
+.game-over .try-again-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

@@ -1,3 +1,6 @@
+import { useDispatch } from "react-redux";
+import { addCorrect } from "../../../../store/gameSlice";
+
 export const Option = ({
   option,
   number,
@@ -5,6 +8,8 @@ export const Option = ({
   optionPlayed,
   setOptionPlayed,
 }) => {
+  const dispatch = useDispatch();
+
   const numberToLetter = () => {
     switch (number) {
       case 0:
@@ -25,6 +30,9 @@ export const Option = ({
   };
 
   const onOptionPlayed = () => {
+    if (option === correctAnswer) {
+      dispatch(addCorrect());
+    }
     setOptionPlayed(option);
   };
 

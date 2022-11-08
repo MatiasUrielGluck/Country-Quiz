@@ -19,7 +19,7 @@
     position: relative;
 }
 
-.game-layout .layout-container .subcontainer h1 {
+.game-layout .layout-container .subcontainer .title {
     margin-bottom: 10px;
     font-weight: 700;
     color: white;
