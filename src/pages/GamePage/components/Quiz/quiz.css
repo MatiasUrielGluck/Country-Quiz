@@ -46,6 +46,18 @@
     border: 2px solid rgba(96, 102, 208, 0);
 }
 
+.capital-quiz .options-container .option.correct:hover {
+    background: #60BF88;
+    border: 2px solid rgba(96, 102, 208, 0);
+    color: white;
+}
+
+.capital-quiz .options-container .option.incorrect:hover {
+    background: #EA8282;
+    border: 2px solid rgba(96, 102, 208, 0);
+    color: white;
+}
+
 .capital-quiz .options-container .option .icon {
     position: absolute;
     right: 16px;
