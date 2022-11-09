@@ -6,7 +6,7 @@ import {
   getRandomCountry,
   shuffleArray,
 } from "../../../../helpers";
-import { nextStage } from "../../../../store/gameSlice";
+import { addCorrect, nextStage } from "../../../../store/gameSlice";
 import { Option } from "../Option";
 
 import "./quiz.css";
@@ -31,6 +31,9 @@ export const Quiz = ({ countries, quizType }) => {
   }, [country]);
 
   const onNext = () => {
+    if (optionPlayed === country) {
+      dispatch(addCorrect());
+    }
     setOptionPlayed(null);
     setCountry(getRandomCountry(countries));
     dispatch(nextStage());
@@ -44,7 +47,11 @@ export const Quiz = ({ countries, quizType }) => {
             <h2>{country.capital[0]} is the capital of</h2>
           ) : (
             <>
-              <img className="flag-img" src={country.flags[1]} alt="flag image" />
+              <img
+                className="flag-img"
+                src={country.flags[1]}
+                alt="flag image"
+              />
               <h2>Which country does this flag belong to?</h2>
             </>
           )}

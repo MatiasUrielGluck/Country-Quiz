@@ -31,7 +31,7 @@ export const Option = ({
 
   const onOptionPlayed = () => {
     if (option === correctAnswer) {
-      dispatch(addCorrect());
+      // dispatch(addCorrect());
     }
     setOptionPlayed(option);
   };
