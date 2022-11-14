@@ -61,9 +61,18 @@
     text-decoration: underline;
 }
 
-@media only screen and (max-height: 650px)  {
+@media only screen and (max-height: 750px)  {
     .game-layout .layout-container .subcontainer .game-container {
         height: 80vh;
+        padding: 18px;
+    }
+
+    .game-layout .layout-container .subcontainer .game-image {
+        display: none;
+    }
+
+    .game-layout .footer {
+        bottom: 0;
     }
 }
 
